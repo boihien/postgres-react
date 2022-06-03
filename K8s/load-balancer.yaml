@@ -3,13 +3,13 @@ kind: Service
 metadata:
   name: load-balancer
   labels:
-    app: react-docker
+    app: deploy-react-kubernetes
 spec:
   type: LoadBalancer
   ports:
   - port: 80
     targetPort: 80
     protocol: TCP
-    nodePort: 31000
+    nodePort: 32000
   selector:
-    app: react-docker
+    app: deploy-react-kubernetes

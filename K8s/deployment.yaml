@@ -1,19 +1,21 @@
-kind: Deployment
 apiVersion: apps/v1
+kind: Deployment
 metadata:
-  name: react-docker
+  name: deploy-react-kubernetes
+  labels:
+    app: deploy-react-kubernetes
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
-      app: react-docker
+      app: deploy-react-kubernetes
   template:
     metadata:
       labels:
-        app: react-docker
+        app: deploy-react-kubernetes
     spec:
       containers:
-      - name: react-docker
-        image: bhuang019/react-docker
+      - name: deploy-react-kubernetes
+        image: bhuang019/deploy-react-kubernetes
         ports:
         - containerPort: 80
